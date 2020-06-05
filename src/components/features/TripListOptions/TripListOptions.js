@@ -11,6 +11,11 @@ class TripListOptions extends React.Component {
 
   handleDuration(type, value){
     console.log('Changing duration', type, value);
+    if(type === 'from') {
+      this.props.changeDurationFrom(parseInt(value));
+    }else{
+      this.props.changeDurationTo(parseInt(value));
+    }
     // TODO - use action dispatcher from props
   }
 
@@ -34,7 +39,14 @@ class TripListOptions extends React.Component {
             <div className={styles.filter}>
               <label>
                 Duration from:
-                <input className={`${styles.input} ${styles.number}`} type='number' value={filters.duration.from} min='1' max='14' onChange={event => this.handleDuration('from', event.currentTarget.value)} />
+                <input 
+                  className={`${styles.input} ${styles.number}`} 
+                  type='number' 
+                  value={filters.duration.from} 
+                  min='1' max='14' 
+                  onChange={event => this.handleDuration('from', event.currentTarget.value)
+                  } 
+                />
               </label>
               <label>
                 to:
@@ -81,6 +93,8 @@ TripListOptions.propTypes = {
   filters: PropTypes.object,
   changeSearchPhrase: PropTypes.func,
   changeTags: PropTypes.func,
+  changeDurationFrom: PropTypes.func,
+  changeDurationTo: PropTypes.func,
 };
 
 export default TripListOptions;
