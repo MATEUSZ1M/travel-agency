@@ -11,9 +11,12 @@ export const getFilteredTrips = ({ trips, filters }) => {
     output = output.filter((trip) => pattern.test(trip.name));
   }
   // TODO - filter by duration
-  
+  if(filters.tags) {
+    const pattern = new RegExp(filters.tags, 'i');
+    output = output.filter(trip => pattern.test(trip.tags));
+  }
   // TODO - filter by tags
-  
+
   // TODO - sort by cost descending (most expensive goes first)
 
   return output;
@@ -42,7 +45,6 @@ export const getTripsForCountry = ({ trips }, countryCode) => {
 
 // // action types
 // export const FILTER_TRIPS = createActionName(FILTER_TRIPS);
-// // export const FILTER_TAGS = createActionName(FILTER_TAGS);
 
 // // action creators
 // export const createAction_changeSearch = (payload) => ({
