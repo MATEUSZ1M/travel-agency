@@ -22,13 +22,13 @@ export const changeSearchPhrase = (payload) => ({
 });
 export const changeTags = (payload) => ({ payload, type: CHANGE_TAGS });
 // TODO - add other action creators
-export const changeDurationFrom = (value) => ({
-  value,
+export const changeDurationFrom = (payload) => ({
+  payload,
   type: CHANGE_DURATION_FROM,
 });
 
-export const changeDurationTo = (value) => ({
-  value,
+export const changeDurationTo = (payload) => ({
+  payload,
   type: CHANGE_DURATION_TO,
 });
 
