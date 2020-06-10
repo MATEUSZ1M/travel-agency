@@ -8,7 +8,7 @@ import {formatPrice} from '../../../utils/formatPrice';
 const OrderSummary = ({ cost, options }) => (
   <div>
     <h2 className={styles.component}>
-    Total:<strong> {calculateTotal(formatPrice(cost), options) } </strong>
+      Total:<strong> {calculateTotal(formatPrice(cost), options) } </strong>
     </h2>
   </div>
 );
