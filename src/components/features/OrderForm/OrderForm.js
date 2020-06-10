@@ -6,13 +6,13 @@ import styles from './OrderForm.scss';
 import OrderOption from '../OrderOption/OrderOption';
 import pricing from '../../../data/pricing.json';
 
-const OrderForm = ({ tripCost, options }) => (
+const OrderForm = ({ tripCost, options, currentValue, setOrderOption}) => (
   <div className={styles.component}>
     <Grid>
       <Col xs={12}>
         {pricing.map((data) => (
           <Col md={4} key={data.id}>
-            <OrderOption {...data} />
+            <OrderOption {...data} options={currentValue} setOrderOption={setOrderOption}/>
           </Col>
         ))}
         <OrderSummary cost={tripCost} options={options} />
@@ -23,6 +23,8 @@ const OrderForm = ({ tripCost, options }) => (
 OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options: PropTypes.object,
+  currentValue: PropTypes.number,
+  setOrderOption: PropTypes.node,
 };
 
 export default OrderForm;
