@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import {getOrderOptions} from '../../../redux/orderRedux';
 import OrderForm from './OrderForm';
 
+
 import {setOrderOption} from '../../../redux/orderRedux';
 
 const mapStateToProps = state => ({
@@ -9,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setStates: (newState) => dispatch(setOrderOption(newState)),
+  currentValue: (payload) => dispatch(setOrderOption(payload)),
 });
 
 
