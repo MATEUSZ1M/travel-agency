@@ -22,6 +22,10 @@
   width: 80%;
   padding: ($base-size / 2);
 
+  &:hover{
+    background:  lighten($color: $color-primary, $amount: 10);
+  }
+
   i {
     padding-right: ($base-size / 2);
   }
@@ -34,12 +38,31 @@
 .checkboxes {
   display: flex;
   flex-direction: column;
+  width: 80%;
+  &Small {
+    width: 30%;
+  }
+
+  label{
+    padding: ($base-size / 2);
+
+    &:hover{
+      background:  lighten($color: $color-primary, $amount: 10);
+    }
+
+    input[type=checkbox]{
+      margin-right: $base-size;
+    }
+  }
+  
+
 }
 
-.number{
-  background-color: red;
-}
+// .number{
+// }
 
 .imputSmall{
-  color: green;
+  color: $color-dark;
+  font-weight: bold;
+  text-align: center;
 }
