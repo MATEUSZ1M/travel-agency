@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './OrderOption.scss';
 import PropTypes from 'prop-types';
 
-const OrderOptionNumber = ({ currentValue, setOptionValue, limits }) => (
+const OrderOptionNumber = ({ currentValue, setOptionValue, limits, defaultValue }) => (
   <div className={styles.number}>
  
 
@@ -11,6 +11,7 @@ const OrderOptionNumber = ({ currentValue, setOptionValue, limits }) => (
       type='number'
       min={`${limits.min}`}
       max={`${limits.max}`}
+      placeholder={defaultValue}
       value={currentValue}
       onChange={event => setOptionValue(event.currentTarget.value)}
     >
@@ -22,7 +23,8 @@ const OrderOptionNumber = ({ currentValue, setOptionValue, limits }) => (
 OrderOptionNumber.propTypes = {
   currentValue: PropTypes.array,
   setOptionValue: PropTypes.func,
-  limits: PropTypes.array,
+  limits: PropTypes.object,
+  defaultValue: PropTypes.number,
 };
 
 export default OrderOptionNumber;

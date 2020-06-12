@@ -1,12 +1,48 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import styles from './OrderOption.scss';
+import PropTypes from 'prop-types';
+import Icon from '../../common/Icon/Icon';
+import { formatPrice } from '../../../utils/formatPrice';
 
-const OrderOptionIcons = () => (
+const OrderOptionIcons = ({ values, required, setOptionValue }) => (
   <div>
-    <h2>OrderOptionIcons</h2>
+    {(!required || '') && (
+      <div>
+        {values.map((value) => (
+          <div
+            className={styles.icon}
+            key={value.id}
+            onClick={() => {
+              setOptionValue('');
+            }}
+          >
+            <Icon name={'times-circle'} />
+            <h2>{formatPrice(0)}</h2>
+          </div>
+        ))}
+      </div>
+    )}
+    {values.map((value) => (
+      <div
+        className={styles.icon}
+        key={value.id}
+        onClick={() => {
+          console.log('setOptionVal');
+          setOptionValue(value.id);
+        }}
+      >
+        <Icon key={value.id} name={value.icon} />
+        <span>{value.name} {formatPrice(value.price)}</span>
+      </div>
+    ))}
   </div>
 );
 
-OrderOptionIcons.propTypes = {};
+OrderOptionIcons.propTypes = {
+  values: PropTypes.array,
+  icon: PropTypes.string,
+  setOptionValue: PropTypes.func,
+  required: PropTypes.bool,
+};
 
 export default OrderOptionIcons;

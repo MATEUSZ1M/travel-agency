@@ -30,7 +30,7 @@ OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options: PropTypes.object,
   currentValue: PropTypes.func,
-  setOrderOption: PropTypes.node,
+  setOrderOption: PropTypes.func,
 };
 
 export default OrderForm;

@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  currentValue: (payload) => dispatch(setOrderOption(payload)),
+  setOrderOption: (payload) => dispatch(setOrderOption(payload)),
 });
 
 
