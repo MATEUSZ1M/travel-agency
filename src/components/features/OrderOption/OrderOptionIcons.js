@@ -26,8 +26,6 @@ const OrderOptionIcons = ({ values, required, setOptionValue }) => (
       <div
         
         className={styles.icon}
-        activeClassName={styles.iconActive}
-
         key={value.id}
         onClick={() => {
           setOptionValue(value.id);
