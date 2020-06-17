@@ -35,12 +35,21 @@ describe('Component TripSummary', () => {
 
     const renderedTitle = component.find('.title').text();
     const renderedCost = component.find('.details').text();
-    // const renderedCost = component.find('.title').text();
 
     expect(renderedTitle).toEqual(expectedTitle);
     expect(renderedCost).toEqual(`${expectedDuration} daysfrom ${expectedTitle}`);
+
     
   });
+
+  // it('should render correct props: tags', () => {
+  //   const tags = ['abc', 'acb', 'bac'];
+  //   const component = shallow(<TripSummary tags={tags} />);
+
+  //   expect(component.at(0).find('.tag').at(0).prop(tags)).toEqual(tags);
+  //   // expect(component.find('.tag').prop('tag')).toEqual.at(1)(tags);
+  //   // expect(component.find('.tag').prop('tag')).toEqual.at(2)(tags);
+  // });
 
 });
 
