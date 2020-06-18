@@ -1,0 +1,64 @@
+{
+  "orders": [
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$51,381",
+      "id": 1
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$51,381",
+      "id": 2
+    },
+    {
+      "car-rental": "suv",
+      "accommodation": "suite",
+      "features": [],
+      "adults": 1,
+      "children": "1",
+      "name": "rty",
+      "contact": "ry",
+      "start-date": "",
+      "totalCost": "$78,121",
+      "id": 3
+    },
+    {
+      "car-rental": "suv",
+      "accommodation": "house",
+      "features": [],
+      "adults": "1",
+      "children": "1",
+      "name": "ggfh",
+      "contact": "fgh",
+      "start-date": "",
+      "totalCost": "$78,871",
+      "id": 4
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$51,381",
+      "id": 5
+    }
+  ]
+}
