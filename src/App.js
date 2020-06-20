@@ -20,7 +20,6 @@ import parseTrips from './utils/parseTrips';
 import { setMultipleStates } from './redux/globalRedux';
 import styles from './App.scss';
 
-
 class App extends React.Component {
   static propTypes = {
     trips: PropTypes.array,
@@ -45,24 +44,26 @@ class App extends React.Component {
       <BrowserRouter>
         <MainLayout>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path='/' component={Home} />
           </Switch>
           <AnimatedSwitch
             location={location}
-            atEnter={{ opacity: 0}}
-            atLeave={{ opacity: 1 }}
-            atActive={{ opacity: 1 }}
+            atEnter={{ opacity: 0, offset: -200 }}
+            atLeave={{ opacity: 0, offset: -200 }}
+            atActive={{ opacity: 1, offset: 0 }}
             className={styles.switchWrapper}
+            mapStyles={({ opacity, offset }) => ({
+              transform: `translateY(${offset}px)`,
+              opacity,
+            })}
           >
-           
-            <Route exact path="/trips" component={Trips} />
-            {/* TODO - add more routes for other views */}
-            <Route exact path="/countries" component={Countries} />
-            <Route exact path="/regions" component={Regions} />
-            <Route exact path="/trip/:id" component={Trip} />
-            <Route exact path="/country/:id" component={Country} />
-            <Route exact path="/info" component={Info} />
-            <Route path="*" component={NotFound} />
+            <Route exact path='/trips' component={Trips} />
+            <Route exact path='/countries' component={Countries} />
+            <Route exact path='/regions' component={Regions} />
+            <Route exact path='/trip/:id' component={Trip} />
+            <Route exact path='/country/:id' component={Country} />
+            <Route exact path='/info' component={Info} />
+            <Route path='*' component={NotFound} />
           </AnimatedSwitch>
         </MainLayout>
       </BrowserRouter>

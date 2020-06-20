@@ -59,6 +59,60 @@
       "start-date": "",
       "totalCost": "$51,381",
       "id": 5
+    },
+    {
+      "car-rental": "",
+      "accommodation": "suite",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$51,881",
+      "id": 6
+    },
+    {
+      "car-rental": "suv",
+      "accommodation": "suite",
+      "features": [
+        "security"
+      ],
+      "adults": "1",
+      "children": "0",
+      "name": "c",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$54,081",
+      "id": 7
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "hotel",
+      "features": [
+        "security"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$31,419",
+      "id": 8
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "house",
+      "features": [
+        "kitchen"
+      ],
+      "adults": "1",
+      "children": "1",
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$79,471",
+      "id": 9
     }
   ]
 }

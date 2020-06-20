@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { formatPrice } from '../../../utils/formatPrice';
 import styles from './OrderOption.scss';
 
-const newValueSet = (currentValue, id, checked) => {
+const newValueSet = (currentValue = [], id, checked) => {
   if (checked) {
     return [...currentValue, id];
   } else {
@@ -22,11 +22,11 @@ const OrderOptionCheckboxes = ({ values, setOptionValue, currentValue }) => (
           value={value.id}
           onChange={(event) =>
             setOptionValue(
-              newValueSet(currentValue, value.id, event.currentTarget.checked)
+              newValueSet(currentValue || [], value.id, event.currentTarget.checked)
             )
           }
           //TODO
-          checked
+          checked={(currentValue || []).indexOf(value.id) !== -1}
         />
 
         <span>

@@ -1,6 +1,13 @@
 @import "./styles/settings.scss";
 
-.switchAnimation {
- //TODO
+.switchWrapper {
+  position: relative;
+  top: 50px;
+
+  > :first-child ~ div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
-  

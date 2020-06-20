@@ -10,7 +10,7 @@ describe('Component OrderOption', () => {
 
   it('should return empty object if called without required props', () => {
     const component = shallow(<OrderOption />);
-    expect(component).toEqual({});
+    expect(component).toEqual();
   });
 
   it('sholud render correct title name', () => {
@@ -86,9 +86,6 @@ describe('Component OrderOption', () => {
       /* common tests */
       it('passes dummy test', () => {
         expect(1).toBe(1);
-        console.log(component.debug());
-        console.log(subcomponent.debug());
-
       });
 
       it(`renders ${optionTypes[type]}`, () => {
@@ -127,8 +124,6 @@ describe('Component OrderOption', () => {
           it('renders icons', () => {
             const icon = renderedSubcomponent.find('.icon');
             expect(icon).toBeTruthy();
-
-            console.log('icons:',icon.debug());
           });
 
           it('should run SetOrderOption function on click', () => {

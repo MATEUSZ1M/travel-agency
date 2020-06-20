@@ -1,0 +1,20 @@
+@import '../../../styles/settings.scss';
+
+.component{
+    position: relative;
+    margin: auto;
+    width: 500px;
+    text-align: center;
+    background-color: rgba(34,47,62, 0.7);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.title{
+    font-size: ($base-size * 3);
+    color: $color-light;
+}
+
+.promoDescription{
+ color: $color-light;
+}
