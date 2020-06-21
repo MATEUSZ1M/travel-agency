@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import HappyHourAd from '../../features/HappyHourAd/HappyHourAd';
 
 const Hero = ({variant = '', titleText, imageSrc, ...otherProps}) => (
+  
   <div {...otherProps} className={styles.component + variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')}>
     <h2 className={styles.title}>{titleText}
     </h2>
     <img className={styles.image}  src={imageSrc} />
-    <HappyHourAd title={'Happy Hour'} />
+    <HappyHourAd title={'Happy Hour'} promoDescription={'This is your time !'}  />
   </div>
 
 );

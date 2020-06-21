@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class HappyHourAd extends React.Component {
   static propTypes = {
     title: PropTypes.string,
+    promoDescription: PropTypes.string,
   };
 
   constructor() {
@@ -39,12 +40,18 @@ class HappyHourAd extends React.Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, promoDescription } = this.props;
+    
+    const description = () => {
+      if (this.getCountdownTime() > 82800) {
+        return promoDescription;
+      } else return this.getCountdownTime();
+    };
 
     return (
       <div className={styles.component}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.promoDescription}>{this.getCountdownTime()}</div>
+        <div className={styles.promoDescription}>{description()}</div>
       </div>
     );
   }
