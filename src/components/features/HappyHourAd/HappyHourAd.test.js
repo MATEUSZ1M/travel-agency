@@ -86,9 +86,8 @@ const checkDescriptionAfterTime = (time, delaySeconds, expectedDescription) => {
   });
 };
 
-//Correct description
 const checkDescription = (time, expectedDescription) => {
-  it(`should show correct promo description at ${time}`, () => {
+  it(`should render correct promo description at ${time}`, () => {
     global.Date = mockDate(`2019-05-14T${time}.135Z`);
 
 
@@ -100,7 +99,11 @@ const checkDescription = (time, expectedDescription) => {
   });
 };
 
-
+const checkDescriptionStart = (time) => {
+  it(`should change time for description at ${time}`, () => {
+    //TO DO ############################################
+  }); 
+};
 
 
 describe('Component HappyHourAd with mocked Date', () => {
@@ -115,8 +118,14 @@ describe('Component HappyHourAd with mocked Date and delay', () => {
   checkDescriptionAfterTime('13:00:00', 60 * 60, 22 * 60 * 60 + '');
 });
 
-describe('Component HappyHourAd', () => {
+describe('Component HappyHourAd ', () => {
   checkDescription('11:57:58', '122');
   checkDescription('11:59:59', '1');
   checkDescription('13:00:00', 23 * 60 * 60 + '');
+});
+
+describe('Component HappyHourAd time=>text', () => {
+  checkDescriptionStart('11:57:58', 2, '120');
+  checkDescriptionStart('11:59:58', 1, '1');
+  checkDescriptionStart('12:00:00', 60 * 60, 23 * 60 * 60 + '');
 });
