@@ -14,19 +14,14 @@ const newValueSet = (currentValue = [], id, checked) => {
 const OrderOptionCheckboxes = ({ values, setOptionValue, currentValue }) => (
   <div className={styles.checkboxes}>
     {values.map((value) => (
-      <label key={value.id} name={value.id}>
+      <label key={value.id} >
         <input
           id={value.id}
-          name={value.name}
           type='checkbox'
           value={value.id}
-          onChange={(event) =>
-            setOptionValue(
-              newValueSet(currentValue || [], value.id, event.currentTarget.checked)
-            )
-          }
+          onChange={event => setOptionValue(newValueSet(currentValue, value.id, event.currentTarget.checked))}
           //TODO
-          checked={(currentValue || []).indexOf(value.id) !== -1}
+          checked={currentValue.includes(value.id)}
         />
 
         <span>

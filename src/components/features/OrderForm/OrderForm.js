@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Grid, Row } from 'react-flexbox-grid';
+import { Col, Row } from 'react-flexbox-grid';
 import OrderSummary from '../OrderSummary/OrderSummary';
-import styles from './OrderForm.scss';
 import OrderOption from '../OrderOption/OrderOption';
 import pricing from '../../../data/pricing.json';
 import Button from '../../common/Button/Button';
@@ -36,33 +35,28 @@ const sendOrder = (options, tripCost) => {
       console.log('parsedResponse', parsedResponse);
     });
 };
-
 const OrderForm = ({ tripCost, options, currentValue, setOrderOption }) => (
-  <div className={styles.component}>
-    <Grid>
-      <Row>
-        <Col xs={12}>
-          {pricing.map((data) => (
-            <Col md={4} key={data.id}>
-              <OrderOption
-                {...data}
-                options={currentValue}
-                setOrderOption={setOrderOption}
-              />
-            </Col>
-          ))}
-          <OrderSummary cost={tripCost} options={options} />
-          <Button onClick={() => sendOrder(options, tripCost)}>Order now!</Button>
-
+  <form>
+    <Row>
+      {pricing.map((data) => (
+        <Col md={4} key={data.id}>
+          <OrderOption
+            currentValue={options[data.id]}
+            options={currentValue}
+            setOrderOption={setOrderOption}
+            {...data}
+          />
         </Col>
-      </Row>
-    </Grid>
-  </div>
+      ))}
+      <OrderSummary cost={tripCost} options={options} />
+    </Row>
+    <Button onClick={() => sendOrder(options, tripCost)}>Order now!</Button>
+  </form>
 );
 OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options: PropTypes.object,
-  currentValue: PropTypes.func,
+  currentValue: PropTypes.number,
   setOrderOption: PropTypes.func,
 };
 
