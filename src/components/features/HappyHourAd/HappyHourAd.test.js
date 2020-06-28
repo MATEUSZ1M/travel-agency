@@ -12,6 +12,11 @@ const mockProps = {
   promoDescription: 'Lorem Descriptum',
 };
 
+beforeAll(() => {
+  const utilsModule = jest.requireActual('../../../utils/formatTime.js');
+  utilsModule.formatTime = jest.fn(seconds => seconds);
+});
+
 describe('Component HappyHourAd', () => {
   it('passes dummy test', () => {
     expect(1).toBe(1);
