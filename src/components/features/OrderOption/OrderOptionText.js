@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const OrderOptionText = ({defaultValue, setOptionValue, placeholder}) => (
   <div >
     <input
+      required
       placeholder={placeholder}
       type='text'
       value={defaultValue}

@@ -10,7 +10,7 @@ describe('Component OrderOption', () => {
 
   it('should return empty object if called without required props', () => {
     const component = shallow(<OrderOption />);
-    expect(component).toEqual();
+    expect(component).toEqual({});
   });
 
   it('sholud render correct title name', () => {
@@ -127,7 +127,7 @@ describe('Component OrderOption', () => {
           });
 
           it('should run SetOrderOption function on click', () => {
-            renderedSubcomponent.find('icon').simulate('click');
+            renderedSubcomponent.find('.icon').simulate('click');
             expect(mockSetOrderOption).toBeCalledTimes(1);
             expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
           });

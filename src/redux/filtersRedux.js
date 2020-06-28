@@ -72,22 +72,3 @@ export default function reducer(statePart = [], action = {}) {
   }
 }
 
-/*
-
-  flaga = false;
-  state.filters
-
-  {
-    ...state,
-    filters: [
-      ...state.filters,
-      'xxx'
-    ],
-    
-    // xxx: 'x12312'
-
-    ...flaga && {xxx: 'x12312'}
-
-  }
-
-*/
